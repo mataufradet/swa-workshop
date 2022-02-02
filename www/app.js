@@ -4,7 +4,9 @@ const empty = document.querySelector('#empty');
 const usernameElement = document.querySelector('#username');
 
 async function getUser() {
-    // TODO
+    const user = await fetch('/.auth/me');
+    const userJson = await user.json();
+    usernameElement.appendChild(userJson.userDetails);
 }
 
 async function updateTask() {
